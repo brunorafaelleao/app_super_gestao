@@ -1,6 +1,6 @@
 # 🌐 Sessão 5 — Desenvolvimento Web Avançado com PHP, Laravel e Vue.JS
 
-Este repositório é dedicado aos estudos da **Sessão 5** do curso [Desenvolvimento Web Avançado com PHP, Laravel e Vue.JS](https://www.udemy.com/course/php-laravel-vuejs/) da Udemy.
+Este repositório é dedicado aos estudos da **Sessão 5** do curso [Desenvolvimento Web Avançado com PHP, Laravel e Vue.JS](https://www.udemy.com/course/curso-completo-do-desenvolvedor-laravel/) da Udemy.
 
 ---
 
