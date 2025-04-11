@@ -27,8 +27,37 @@ Route::get('/contato', function () {
 });*/
 
 // A partir do Laravel 8, a forma recomendada para definir controllers nas rotas é usando array notation com ::class
-Route::get('/', [PrincipalController::class, 'principal']);
-Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos']);
-Route::get('/contato', [ContatoController::class, 'contato']);
+Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
+Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
+;
+Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+;
 
 
+Route::prefix('app')->group(function () {
+    Route::get('/login', function () {
+        return 'Login';
+    })->name('app.login ');
+
+    Route::get('/clientes', function () {
+        return 'Clientes';
+    })->name('app.login ');
+
+    Route::get('/fornecedores', function () {
+        return 'Fornecedores';
+    })->name('app.login ');
+});
+
+Route::get('/teste', function () {
+    return view('site.exemplo');
+});
+
+Route::fallback(function () {
+    echo 'A rota acessada não existe. <a href="' . route('site.index') . '">Clique aqui</a> para ir para a página inicial';
+    // return redirect()->route('site.index');
+});
+
+
+// Route::get('/contato/{nome}', function (string $nome) {
+//     echo 'Estamos aqui: ' . $nome;
+// });
