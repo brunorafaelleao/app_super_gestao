@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\SobreNosController;
@@ -43,9 +44,7 @@ Route::prefix('app')->group(function () {
         return 'Clientes';
     })->name('app.login ');
 
-    Route::get('/fornecedores', function () {
-        return 'Fornecedores';
-    })->name('app.login ');
+    Route::get('/fornecedores', [FornecedorController::class, 'index'])->name('app.fornecedor.index');
 });
 
 Route::get('/teste', function () {
