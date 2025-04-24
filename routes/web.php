@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\SobreNosController;
@@ -29,9 +30,8 @@ Route::get('/contato', function () {
 // A partir do Laravel 8, a forma recomendada para definir controllers nas rotas é usando array notation com ::class
 Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
 Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
-;
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
-;
+Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 
 
 Route::prefix('app')->group(function () {
@@ -43,9 +43,7 @@ Route::prefix('app')->group(function () {
         return 'Clientes';
     })->name('app.login ');
 
-    Route::get('/fornecedores', function () {
-        return 'Fornecedores';
-    })->name('app.login ');
+    Route::get('/fornecedores', [FornecedorController::class, 'index'])->name('app.fornecedor.index');
 });
 
 Route::get('/teste', function () {
