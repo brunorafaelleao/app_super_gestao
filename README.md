@@ -55,7 +55,7 @@ Todo o conteúdo desta sessão está sendo desenvolvido em uma **branch exclusiv
 -   [x] Seção 4
 -   [x] Seção 5
 -   [x] Seção 6
--   [] Seção 7
+-   [x] Seção 7
 -   [] Seção 8
 -   [] Seção 9
 -   [] Seção 10
